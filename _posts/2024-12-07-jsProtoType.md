@@ -44,7 +44,7 @@ console.log("이름 : " + name, "나이 : " + age, "피부색 : " + skinColor);
 "나이 : 30"
 "피부색 : undefined"
 ```
-Person 클래스로 인스턴스를 생성할 때, name과 age는 부여하여 정상 출력되었으나 피부색은 undefined가 출력되었다.
+Person 클래스로 인스턴스를 생성할 때, name과 age는 부여하여 정상 출력되었으나 피부색은 undefined이 출력되었다.
 다음 예제를 보자.
 
 ## 2-1. 프로토타입을 사용한 경우
