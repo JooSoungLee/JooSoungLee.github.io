@@ -1,5 +1,5 @@
 ---
-title:  "[javascript] ProtoType의 개념과 예제"
+title:  "[javascript] 초등학생도 이해할 ProtoType의 개념과 예제"
 excerpt: "자바스크립트 프로토타입이란?"
 
 categories:
