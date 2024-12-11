@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rockpaperscissor/static/css/main.92333a4e.css",
+    "main.js": "/rockpaperscissor/static/js/main.586e3397.js",
+    "static/media/bawi.png": "/rockpaperscissor/static/media/bawi.36e4f20e544680d5d7db.png",
+    "static/media/bo.png": "/rockpaperscissor/static/media/bo.d7fa16464d6c5c437fc5.png",
+    "static/media/gawi.png": "/rockpaperscissor/static/media/gawi.89d557044c485b55ba7c.png",
+    "index.html": "/rockpaperscissor/index.html",
+    "main.92333a4e.css.map": "/rockpaperscissor/static/css/main.92333a4e.css.map",
+    "main.586e3397.js.map": "/rockpaperscissor/static/js/main.586e3397.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92333a4e.css",
+    "static/js/main.586e3397.js"
+  ]
+}
