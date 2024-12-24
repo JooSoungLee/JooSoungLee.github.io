@@ -20,7 +20,7 @@ AOP(Aspect-Oriented Programming) 은 관심사 분리를 목표로 하는 프로
 AOP 기법 중 자주 사용하는 어노테이션 기법을 정리해 보자.
 
 ## Maven 의존성 추가
-AOP를 사용하기 위해서는 Maven에 의존성을 추가해야 한다.
+Spring AOP를 사용하기 위해서는 Maven에 의존성을 추가해야 한다.
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -28,8 +28,17 @@ AOP를 사용하기 위해서는 Maven에 의존성을 추가해야 한다.
 </dependency>
 ```
 
-## 어노테이션 별 개념 정리
+## 주요 개념
+- **Aspect**     : 공통 관심사를 모듈화한 것. 보통 클래스 단위로 구성된다. 예를 들어, 로깅이나 트랜잭션 관리가 이에 해당한다.
+- **Join Point** : Aspect가 적용될 수 있는 지점으로, 메서드 호출, 객체 생성 등 다양한 지점이 될 수 있음.
+- **Point Cut**  : Join Point의 집합으로, 어떤 Join Point에 Aspect를 적용할지를 정의한다. 주로 표현식으로 작성됨. 
 
+## 어노테이션 별 개념 정리
+- **@Aspect**          : 공통 관심사를 모듈화. 업무단위별로 하나의 Aspect를 구성
+- **@Before**          : Join Point 실행 전에 실행됨.
+- **@After**           : Join Point 실행 후에 실행됨.
+- **@After Returning** : Join Point가 정상적으로 실행된 후에 실행됨.
+- **@After Throwing**  : Join Point에서 예외가 발생했을 때 실행됨.
 
 
 
