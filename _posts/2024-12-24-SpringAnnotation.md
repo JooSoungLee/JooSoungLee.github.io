@@ -14,9 +14,9 @@ date: 2024-12-24
 last_modified_at: 2024-12-24
 ---
 # Spring AOP란?
-AOP(Aspect-Oriented Programming) 은 관심사 분리를 목표로 하는 프로그래밍 기법이다.
-특정 기능(예:로깅, 보안, 트랜잭션 등)을 비즈니스 로직과 분리하여 코드의 중복을 줄이고, 
-가독성과 유지보수성을 높이는데 도움을 준다. 
+AOP(Aspect-Oriented Programming) 은 관심사 분리를 목표로 하는 프로그래밍 기법이다.<br>
+특정 기능(예:로깅, 보안, 트랜잭션 등)을 비즈니스 로직과 분리하여 코드의 중복을 줄이고,<br>
+가독성과 유지보수성을 높이는데 도움을 준다.<br>
 AOP 기법 중 자주 사용하는 어노테이션 기법을 정리해 보자.
 
 ## Maven 의존성 추가
@@ -40,6 +40,38 @@ Spring AOP를 사용하기 위해서는 Maven에 의존성을 추가해야 한�
 - **@After Returning** : Join Point가 정상적으로 실행된 후에 실행됨.
 - **@After Throwing**  : Join Point에서 예외가 발생했을 때 실행됨.
 
+
+## 예제
+### 1-1. Aspect 클래스 정의 : 공통 관심사를 정의하는 Aspect 클래스를 만든다.
+```java
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class LoggingAcpect {
+  // Join Point : 특정 메서드 실행 전
+  // 첫 번째 *: 이 부분은 반환 타입을 나타냅니다. *는 모든 반환 타입을 의미합니다. 즉, 어떤 반환 타입의 메서드에도 이 Advice가 적용될 수 있습니다.
+  // com.example.service: 이 부분은 패키지 이름을 나타냅니다. com.example.service 패키지 내의 모든 클래스가 대상이 됩니다.
+  // 두 번째 *: 이 부분은 클래스 이름을 나타냅니다. *는 모든 클래스 이름을 의미합니다. 즉, com.example.service 패키지 내의 모든 클래스의 메서드가 대상이 됩니다.
+  // 세 번째 *: 이 부분은 메서드 이름을 나타냅니다. *는 모든 메서드 이름을 의미합니다. 즉, 해당 클래스 내의 모든 메서드가 대상이 됩니다.
+  // (..): 이 부분은 메서드의 매개변수를 나타냅니다. ..는 0개 이상의 매개변수를 의미합니다. 즉, 매개변수가 없거나 여러 개일 수 있는 모든 메서드가 대상이 됩니다.
+  @Before("excution(* com.example.service.*.*(..))")
+  public void logBefore(){
+    System.out.println("메서드 실행 전: 로그 기록");
+  }
+
+  // Join Point: 특정 메서드 실행 후
+  @After("execution(* com.example.service.*.*(..))")
+  public void logAfter() {
+    System.out.println("메서드 실행 후: 로그 기록");
+  }
+}
+```
+
+### 1-2. Aspect 클래스 정의 : 공통 관심사를 정의하는 Aspect 클래스를 만든다.
 
 
 
