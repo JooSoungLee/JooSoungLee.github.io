@@ -1,5 +1,5 @@
 ---
-title:  "[Spring Framework] 스프링AOP 자주 사용하는 어노테이션 정리"
+title:  "[Spring] 스프링AOP 자주 사용하는 어노테이션 정리"
 excerpt: "스프링 AOP에서 자주 사용하는 어노테이션을 정리한다."
 
 categories:
