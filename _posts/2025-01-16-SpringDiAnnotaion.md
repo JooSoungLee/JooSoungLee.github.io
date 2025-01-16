@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
  
-date: 2024-12-24
-last_modified_at: 2024-12-24
+date: 2025-01-16
+last_modified_at: 2025-01-16
 ---
 # Spring DI란?
 **의존성 주입(Dependency Injection, DI)**은 객체 간의 의존 관계를 외부에서 주입하는 디자인 패턴으로, 스프링 프레임워크에서 핵심적인 역할을 합니다.
